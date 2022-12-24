@@ -1,12 +1,19 @@
 import "./style.css";
 import { useState } from "react";
 import axios from "axios";
-let   baseUrl = "https://crazy-wrap-frog.cyclic.app";
+let baseUrl = "https://crazy-wrap-frog.cyclic.app";
+// if (window.location.href.split(":")[0] === "http") {
+//   baseUrl = "http://localhost:4000";
+// } else {
+//   baseUrl = "https://crudmongodbpwa-production.up.railway.app";
+// }
 
 function Login() {
   const [result, setResult] = useState("");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
   const loginHandler = async (e) => {
     e.preventDefault();
 
@@ -15,10 +22,10 @@ function Login() {
         `${baseUrl}/login`,
         {
           email: email,
-          password: password,
+          password: password
         },
         {
-          withCredentials: true,
+          withCredentials: true
         }
       );
 
@@ -32,12 +39,11 @@ function Login() {
     <div>
       <fieldset>
         <legend>Login</legend>
-        <p className="result">{result}</p>
+        <p>{result}</p>
         <form onSubmit={loginHandler}>
           <input
             id="email"
             label="Email"
-            type="email"
             placeholder="jane@acme.com"
             onChange={(e) => {
               setEmail(e.target.value);
@@ -55,7 +61,9 @@ function Login() {
           <button className="loginbtn" type="submit">
             Submit
           </button>
-        
+          {/* <button className="loginbtn" variant="contained"  onClick={handleSubmit}>
+            Submit
+          </button> */}
         </form>
       </fieldset>
     </div>
