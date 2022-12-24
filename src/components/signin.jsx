@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./style.css";
 import axios from "axios";
-let   baseUrl = "https://crazy-wrap-frog.cyclic.app";
+let baseUrl = "https://crazy-wrap-frog.cyclic.app";
+// if (window.location.href.split(":")[0] === "http") {
+//   baseUrl = "http://localhost:4000";
+// } else {
+//   baseUrl = "https://crudmongodbpwa-production.up.railway.app";
+// }
 const SignIn = () => {
   const [result, setResult] = useState("");
   const [name, setName] = useState("");
@@ -30,7 +35,7 @@ const SignIn = () => {
     <>
       <fieldset className="feildSignin">
         <legend> SignIn</legend>
-        <p className="result">{result}</p>
+        <p>{result}</p>
         <form onSubmit={signupHandler}>
           <label htmlFor="firstName">First Name</label>
 
@@ -72,7 +77,7 @@ const SignIn = () => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            id="password"
+            id="lastName"
             name="new-password"
             autoComplete="new-password"
             placeholder="confirm password"
