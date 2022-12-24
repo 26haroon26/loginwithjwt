@@ -77,7 +77,7 @@ const SignIn = () => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            id="lastName"
+           id="password"
             name="new-password"
             autoComplete="new-password"
             placeholder="confirm password"
